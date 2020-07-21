@@ -26,4 +26,12 @@ module.exports = {
   optimization: {
     minimize: false,
   },
+  devServer: {
+    // contentBase: "./dist",
+    hot: true,
+    port: "8000",
+    inline: true,
+    open: true,
+    overlay: true,
+  },
 };
