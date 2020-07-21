@@ -11,7 +11,7 @@ class Square extends Component {
   render() {
     return (
       <button className="square" onClick={() => this.setState({ value: "X" })}>
-        {this.state.value ? this.state.value : ""}
+        {this.state.value ? this.state.value : " "}
       </button>
     );
   }
@@ -63,4 +63,3 @@ class MyComponent extends Component {
 let a = <Board name="a" id="ida" />;
 
 ToyReact.render(a, document.body);
-
