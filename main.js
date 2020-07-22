@@ -1,6 +1,7 @@
-import { ToyReact, Component } from "./toyReact.js";
+import * as ToyReact from "./toyReact.js";
+import ToyReactDOM from "./toyReactDom.js";
 
-class Square extends Component {
+class Square extends ToyReact.Component {
   render() {
     return (
       <button className="square" onClick={this.props.onClick}>
@@ -10,7 +11,7 @@ class Square extends Component {
   }
 }
 
-class Board extends Component {
+class Board extends ToyReact.Component {
   renderSquare(i) {
     return (
       <Square
@@ -43,7 +44,7 @@ class Board extends Component {
   }
 }
 
-class Game extends Component {
+class Game extends ToyReact.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -112,10 +113,12 @@ class Game extends Component {
             onClick={(i) => this.handleClick(i)}
           />
         </div>
+        {/*
         <div className="game-info">
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
+        */}
       </div>
     );
   }
@@ -123,7 +126,7 @@ class Game extends Component {
 
 // ========================================
 
-ToyReact.render(<Game />, document.body);
+ToyReactDOM.render(<Game />, document.body);
 
 function calculateWinner(squares) {
   const lines = [
